@@ -10,8 +10,6 @@ public class PlayerMovement : MonoBehaviour
 
     public float moveSpeed;
 
-    public float groundDrag;
-
     public float jumpforce;
     public float jumpCooldown;
     public float airMultiplier;
@@ -39,7 +37,6 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>(); 
         rb.freezeRotation = true;
-        //screentext.text = "";
     }
 
     private void MyInput()
@@ -60,13 +57,6 @@ public class PlayerMovement : MonoBehaviour
     {
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround); // check if standing on something with ground layer
         MyInput();
-        SpeedControl();
-
-        if (grounded) // air control
-            rb.drag = groundDrag;
-        else
-            rb.drag = 0;
-
     }
 
     private void FixedUpdate()
@@ -77,30 +67,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        if (grounded) {
-            moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;  
+        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;  
+        moveDirection.y = rb.velocity.y;
 
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force); 
-        }
-
-        // if (grounded) rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-
-        // else if (!grounded)
-        // {
-        //     rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
-        // }
+        rb.velocity = moveDirection.normalized * moveSpeed * 10f; 
     }
 
-    private void SpeedControl() // set max player velocity
-    {
-        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-
-        if(flatVel.magnitude > moveSpeed)
-        {
-            Vector3 limitedVel = flatVel.normalized* moveSpeed;
-            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
-        }
-    }
     private void Jump()
     {
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);

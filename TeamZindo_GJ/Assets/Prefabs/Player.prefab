@@ -262,9 +262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1310472dc7300946951ebdf4c9e71b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 7
-  groundDrag: 5
-  jumpforce: 12
+  moveSpeed: 3
+  jumpforce: 20
   jumpCooldown: 0.25
   airMultiplier: 0.4
   jumpkey: 32
@@ -273,7 +272,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 1760292077237643782}
-  screentext: {fileID: 0}
 --- !u!54 &1466731911911786421
 Rigidbody:
   m_ObjectHideFlags: 0

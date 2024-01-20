@@ -236,12 +236,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 778832600071888248, guid: 90c8a554bf3c54c608c9256bb00498ee, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 778832600071888248, guid: 90c8a554bf3c54c608c9256bb00498ee, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 778832600071888248, guid: 90c8a554bf3c54c608c9256bb00498ee, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 778832600071888248, guid: 90c8a554bf3c54c608c9256bb00498ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.0347939
       objectReference: {fileID: 0}
     - target: {fileID: 778832600071888248, guid: 90c8a554bf3c54c608c9256bb00498ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.8
+      value: 5.69
       objectReference: {fileID: 0}
     - target: {fileID: 778832600071888248, guid: 90c8a554bf3c54c608c9256bb00498ee, type: 3}
       propertyPath: m_LocalPosition.z
@@ -293,7 +305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4523518922739300691, guid: 90c8a554bf3c54c608c9256bb00498ee, type: 3}
       propertyPath: jumpforce
-      value: 3
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4523518922739300691, guid: 90c8a554bf3c54c608c9256bb00498ee, type: 3}
       propertyPath: m_Enabled
@@ -301,7 +313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4523518922739300691, guid: 90c8a554bf3c54c608c9256bb00498ee, type: 3}
       propertyPath: moveSpeed
-      value: 7
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4523518922739300691, guid: 90c8a554bf3c54c608c9256bb00498ee, type: 3}
       propertyPath: playerHeight
