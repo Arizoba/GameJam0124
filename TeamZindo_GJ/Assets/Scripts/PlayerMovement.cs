@@ -12,9 +12,6 @@ public class PlayerMovement : MonoBehaviour
     private float playerSpeed = 2.0f;
 
     [SerializeField]
-    private float jumpSpeed = 10f;
-
-    [SerializeField]
     private float gravityValue = -9.81f;
 
     [SerializeField]
@@ -35,12 +32,6 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = Input.GetAxis("Horizontal") * orientation.right + Input.GetAxis("Vertical") * orientation.forward;
         controller.Move(move * Time.deltaTime * playerSpeed);
-
-        // Changes the height position of the player..
-        // if (Input.GetButtonDown("Jump") && groundedPlayer)
-        // {
-        //     playerVelocity.y = jumpSpeed;
-        // }
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);

@@ -23,6 +23,7 @@ public class RoomShape : MonoBehaviour
         entrance.Player = room.Entrance.Player;
         room.NextRoom = this;
 
+        transform.localScale = room.transform.lossyScale;
         transform.rotation = Quaternion.FromToRotation(entrance.transform.right, room.Exit.transform.right);
         transform.position += room.Exit.transform.position - entrance.transform.position;
 

@@ -7,7 +7,8 @@ public class Entrance : MonoBehaviour
     public RoomManager RoomManager;
     public RoomShape Room;
 
-    public GameObject Player;
+    [SerializeField]
+    public GameObject Player = null;
 
     [SerializeField]
     private float detectionDistance = 3.0f;
