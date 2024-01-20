@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1821879147800695372}
   - component: {fileID: 3661188902793377940}
   - component: {fileID: 2010767917349279622}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Entrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 2052746954112539867}
   - component: {fileID: 144776852019022247}
   - component: {fileID: 6836165538418126098}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 6468694722481562070}
   m_Layer: 6
   m_Name: Room
-  m_TagString: Environment
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -261,8 +261,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entrance: {fileID: 2410860760737674168}
   exit: {fileID: 2621250987837660322}
-  NextRoom: {fileID: 0}
   LastRoom: {fileID: 0}
+  Deletable: 0
 --- !u!65 &3257108895700377246
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -276,14 +276,14 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.000223, y: 0.45239732, z: 1.1442986}
+  m_Center: {x: -0.0041301553, y: -0.6851534, z: 0.015620286}
 --- !u!54 &6468694722481562070
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -303,7 +303,7 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 6869431705500847059}
   - component: {fileID: 6828202992230597091}
   - component: {fileID: 6446141371680793090}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

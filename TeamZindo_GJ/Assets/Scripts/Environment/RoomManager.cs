@@ -13,8 +13,8 @@ public class RoomManager : MonoBehaviour
     void Start()
     {
         RoomShape lastRoomShape = initialRoomShape;
-        foreach (RoomShape room in roomShapes) {
-            RoomShape nextRoomShape = GameObject.Instantiate(room);
+        for (int i=0; i<6; i++) {
+            RoomShape nextRoomShape = GameObject.Instantiate(roomShapes[Random.Range(0, roomShapes.Count)]);
             nextRoomShape.AppendToRoom(lastRoomShape);
             lastRoomShape = nextRoomShape;
         }
