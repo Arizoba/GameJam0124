@@ -517,7 +517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &948305876
 RectTransform:
   m_ObjectHideFlags: 0
@@ -590,12 +590,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1395492862}
   lines:
-  - Crazy?
-  - I was cracy once
-  - They locked me in a room
-  - A rubber room
-  - A rubber room with rats
-  - And the rats made me crazy
+  - "You\u2019re finally awake, darling.  "
+  - 'I have to get out of here. '
   textSpeed: 0.3
 --- !u!1 &1395492860
 GameObject:
@@ -858,7 +854,6 @@ MonoBehaviour:
   Player: {fileID: 487789693}
   other_material: {fileID: 2100000, guid: f331c6e39197f4489b27430e4182f3ec, type: 2}
   Interactable_text: {fileID: 2103884506}
-  DialogueBoxObject: {fileID: 948305875}
 --- !u!65 &1670314064
 BoxCollider:
   m_ObjectHideFlags: 0

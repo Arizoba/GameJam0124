@@ -12,6 +12,7 @@ public class Interact_Tv : MonoBehaviour
     public Material other_material;
     public GameObject Interactable_text;
 
+    public GameObject DialogueBoxObject;
 
 
 
@@ -41,7 +42,7 @@ public class Interact_Tv : MonoBehaviour
                 {
                     // paint door black as an example
                     GetComponent<MeshRenderer>().material = other_material;
-
+                    DialogueBoxObject.SetActive(true);
 
 
                     // would trigger story? dialogue?
