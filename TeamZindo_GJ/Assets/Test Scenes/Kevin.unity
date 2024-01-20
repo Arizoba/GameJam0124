@@ -402,7 +402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2410860760737674168, guid: 64d67f5176504f449b8ba195dcb59824, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2621250987837660322, guid: 64d67f5176504f449b8ba195dcb59824, type: 3}
       propertyPath: m_Layer
@@ -499,8 +499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialRoom: {fileID: 1702957999}
   roomShapes:
-  - {fileID: 6822265088060763438, guid: 36e913bcb67eb3d4aabd17d20ee1b7b3, type: 3}
-  - {fileID: 5988291259686135566, guid: 64d67f5176504f449b8ba195dcb59824, type: 3}
+  - {fileID: 5988291259686135566, guid: 7324a05c25249e6449e7550047d6f827, type: 3}
   generateCount: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
