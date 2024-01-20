@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 107468912}
   - component: {fileID: 107468913}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Camera Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 391960713}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Orientation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 487789697}
   - component: {fileID: 487789696}
   - component: {fileID: 487789695}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PlayerCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,8 +343,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d452275274eb1b2408581a478998d193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 500
-  sensY: 500
+  sensX: 800
+  sensY: 800
   orientation: {fileID: 391960713}
 --- !u!81 &487789696
 AudioListener:
@@ -525,7 +525,7 @@ GameObject:
   - component: {fileID: 965661497}
   - component: {fileID: 965661501}
   - component: {fileID: 965661502}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
