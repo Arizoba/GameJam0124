@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Environment
+  - Door
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Floor
   - 
   - 
   - 

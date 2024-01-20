@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>(); 
         rb.freezeRotation = true;
-        screentext.text = "";
+        //screentext.text = "";
     }
 
     private void MyInput()
