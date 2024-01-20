@@ -21,7 +21,16 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            NextLine();
+
+        }
+        else
+        {
+            StopAllCoroutines();
+            textComponent.text = lines[index];
+        }
     }
 
     void StartDialogue()
@@ -37,6 +46,20 @@ public class Dialogue : MonoBehaviour
         {
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
+        }
+    }
+
+    void NextLine()
+    {
+        if (index < lines.Length - 1)
+        {
+            index++;
+            textComponent.text = string.Empty;
+            StartCoroutine(TypeLine());
+        }
+        else
+        {
+            gameObject.SetActive(false);
         }
     }
 }

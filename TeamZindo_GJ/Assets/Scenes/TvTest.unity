@@ -588,9 +588,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a43c04da431c4b1898a8ee7810bf95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textComponent: {fileID: 0}
-  lines: []
-  textSpeed: 0
+  textComponent: {fileID: 1395492862}
+  lines:
+  - Crazy?
+  - I was cracy once
+  - They locked me in a room
+  - A rubber room
+  - A rubber room with rats
+  - And the rats made me crazy
+  textSpeed: 0.3
 --- !u!1 &1395492860
 GameObject:
   m_ObjectHideFlags: 0
