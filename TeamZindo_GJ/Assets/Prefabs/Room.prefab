@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RoomManager: {fileID: 0}
-  Room: {fileID: 0}
+  Room: {fileID: 8929082909046726138}
   Player: {fileID: 0}
   detectionDistance: 3
   generationCount: 3
@@ -193,7 +193,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3190055873707737801}
-  - component: {fileID: 9101324196160082439}
   - component: {fileID: 5512252063819734979}
   m_Layer: 0
   m_Name: OverlapCollider
@@ -217,22 +216,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1824483443268987104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9101324196160082439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4170243723536978393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 633fbcbb8817ff342bc230be5536fb39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entrance: {fileID: 2032901147345001511}
-  exit: {fileID: 2621250987837660322}
-  environment: {fileID: 9219234924690371897}
-  NextRoom: {fileID: 0}
 --- !u!65 &5512252063819734979
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -263,6 +246,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1824483443268987104}
+  - component: {fileID: 8929082909046726138}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -289,6 +273,23 @@ Transform:
   - {fileID: 3190055873707737801}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8929082909046726138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6243774619156056554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633fbcbb8817ff342bc230be5536fb39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entrance: {fileID: 2032901147345001511}
+  exit: {fileID: 2621250987837660322}
+  environment: {fileID: 9219234924690371897}
+  overlapCollider: {fileID: 5512252063819734979}
+  NextRoom: {fileID: 0}
 --- !u!1 &9219234924690371897
 GameObject:
   m_ObjectHideFlags: 0

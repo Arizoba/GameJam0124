@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2410860760737674168}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -2}
+  m_LocalPosition: {x: -0.27, y: 0.371, z: -2}
   m_LocalScale: {x: 0.033422742, y: 0.71304184, z: 0.28572017}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49,7 +49,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2410860760737674168}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RoomManager: {fileID: 0}
-  Room: {fileID: 0}
+  Room: {fileID: 7600967138758074162}
   Player: {fileID: 0}
   detectionDistance: 10
   generationCount: 3
@@ -118,7 +118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &829672019138398111
 Transform:
   m_ObjectHideFlags: 0
@@ -128,7 +128,7 @@ Transform:
   m_GameObject: {fileID: 2621250987837660322}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.06, y: 1, z: -2}
+  m_LocalPosition: {x: 16.06, y: 0.371, z: -2}
   m_LocalScale: {x: 0.033422742, y: 0.71304184, z: 0.28572017}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -149,7 +149,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2621250987837660322}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 1824483443268987104}
   - component: {fileID: 7600967138758074162}
   m_Layer: 6
-  m_Name: Room 1
+  m_Name: Corridor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entrance: {fileID: 2032901147345001511}
   exit: {fileID: 2621250987837660322}
-  environment: {fileID: 272926535868920583}
+  overlapCollider: {fileID: 1228766246985425861}
   NextRoom: {fileID: 0}
 --- !u!1001 &1083336630081916502
 PrefabInstance:

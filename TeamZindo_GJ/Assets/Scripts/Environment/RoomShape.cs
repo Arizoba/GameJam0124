@@ -11,19 +11,12 @@ public class RoomShape : MonoBehaviour
     private GameObject exit;
 
     [SerializeField]
-    private GameObject environment;
+    private Collider overlapCollider;
 
     public Entrance Entrance => entrance;
     public GameObject Exit => exit;
 
     public RoomShape NextRoom = null;
-
-    void Start() {
-        GameObject roomInstance = Instantiate(environment, environment.transform.position, environment.transform.rotation);
-        roomInstance.transform.localScale = environment.transform.lossyScale;
-        Destroy(environment);
-        environment = roomInstance;
-    }
 
     public void AppendToRoom(RoomShape room) {
         entrance.RoomManager = room.Entrance.RoomManager;
@@ -33,7 +26,7 @@ public class RoomShape : MonoBehaviour
         transform.rotation = Quaternion.FromToRotation(entrance.transform.right, room.Exit.transform.right);
         transform.position += room.Exit.transform.position - entrance.transform.position;
 
-        BoxCollider boxCollider = (BoxCollider) GetComponent<BoxCollider>();
+        BoxCollider boxCollider = (BoxCollider) (overlapCollider.GetComponent<BoxCollider>());
         Vector3 worldCenter = boxCollider.transform.TransformPoint(boxCollider.center);
         Vector3 worldHalfExtents = boxCollider.transform.TransformVector(boxCollider.size * 0.5f);
 
