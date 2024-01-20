@@ -27,6 +27,7 @@ public class RoomShape : MonoBehaviour
 
     public void AppendToRoom(RoomShape room) {
         entrance.RoomManager = room.Entrance.RoomManager;
+        entrance.Player = room.Entrance.Player;
         room.NextRoom = this;
 
         transform.rotation = Quaternion.FromToRotation(entrance.transform.right, room.Exit.transform.right);
