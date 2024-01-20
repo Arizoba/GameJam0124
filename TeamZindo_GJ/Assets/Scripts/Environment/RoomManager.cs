@@ -10,10 +10,13 @@ public class RoomManager : MonoBehaviour
     [SerializeField]
     private List<RoomShape> roomShapes;
 
+    [SerializeField]
+    private int generateCount;
+
     void Start()
     {
         RoomShape lastRoomShape = initialRoomShape;
-        for (int i=0; i<6; i++) {
+        for (int i=0; i<generateCount; i++) {
             RoomShape nextRoomShape = GameObject.Instantiate(roomShapes[Random.Range(0, roomShapes.Count)]);
             nextRoomShape.AppendToRoom(lastRoomShape);
             lastRoomShape = nextRoomShape;

@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2410860760737674168}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.503, y: -0.149, z: 0.17245792}
+  m_LocalPosition: {x: 0.526, y: -0.149, z: 0.17245792}
   m_LocalScale: {x: 0.033422742, y: 0.71304184, z: 0.28572017}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -133,7 +133,7 @@ Transform:
   m_GameObject: {fileID: 2621250987837660322}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.487, y: -0.149, z: -0.307}
+  m_LocalPosition: {x: -0.537, y: -0.149, z: -0.307}
   m_LocalScale: {x: 0.033422742, y: 0.71304184, z: 0.28572017}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -261,8 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entrance: {fileID: 2410860760737674168}
   exit: {fileID: 2621250987837660322}
-  LastRoom: {fileID: 0}
-  Deletable: 0
+  room: {fileID: 9219234924690371897}
 --- !u!65 &3257108895700377246
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -273,17 +272,17 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 4096
+    m_Bits: 5120
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.000223, y: 0.45239732, z: 1.1442986}
-  m_Center: {x: -0.0041301553, y: -0.6851534, z: 0.015620286}
+  m_Size: {x: 1.000223, y: 0.36935222, z: 1.1442986}
+  m_Center: {x: -0.0041301553, y: -0.72667605, z: 0.01562031}
 --- !u!54 &6468694722481562070
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -300,10 +299,10 @@ Rigidbody:
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 4096
+    m_Bits: 5120
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
@@ -408,7 +407,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0

@@ -33,8 +33,6 @@ public class PlayerMovement : MonoBehaviour
     Vector3 moveDirection;
 
     Rigidbody rb;
-    public TextMeshProUGUI screentext;
-
 
     // Start is called before the first frame update
     void Start()
@@ -69,12 +67,6 @@ public class PlayerMovement : MonoBehaviour
         else
             rb.drag = 0;
 
-        if (rb.transform.position.y <= -2) // if fall into canyon
-        {
-            screentext.text = "Fail \n Press \"r\" to quick restart";
-            rb.gameObject.SetActive(false);
-        }
-
     }
 
     private void FixedUpdate()
@@ -85,16 +77,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;  
+        if (grounded) {
+            moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;  
 
-        rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force); 
-
-        if (grounded) rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-
-        else if (!grounded)
-        {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force); 
         }
+
+        // if (grounded) rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+
+        // else if (!grounded)
+        // {
+        //     rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+        // }
     }
 
     private void SpeedControl() // set max player velocity
@@ -119,13 +113,7 @@ public class PlayerMovement : MonoBehaviour
         readyToJump = true;
     }
 
-    private void OnTriggerEnter(Collider other) // When enter trophy display win then stop the game from being played
-    {
-        if (other.gameObject.CompareTag("Trophy"))
-        {
-            other.gameObject.transform.parent.gameObject.SetActive(false);
-            screentext.text = "Win \n press \"r\" to quick reset";
-            rb.gameObject.SetActive(false);
-        }
+    void OnCollisionEnter(Collision collision) {
+        Debug.Log(collision.gameObject);
     }
 }

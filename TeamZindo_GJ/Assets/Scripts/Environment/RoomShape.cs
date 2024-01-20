@@ -10,12 +10,18 @@ public class RoomShape : MonoBehaviour
     [SerializeField]
     private GameObject exit;
 
+    [SerializeField]
+    private GameObject room;
+
     public GameObject Entrance => entrance;
     public GameObject Exit => exit;
 
-    public RoomShape LastRoom;
-
-    public bool Deletable = false;
+    void Start() {
+        GameObject roomInstance = Instantiate(room, room.transform.position, room.transform.rotation);
+        roomInstance.transform.localScale = room.transform.lossyScale;
+        Destroy(room);
+        room = roomInstance;
+    }
 
     public void AppendToRoom(RoomShape room) {
         transform.rotation = Quaternion.FromToRotation(entrance.transform.right, room.Exit.transform.right);
@@ -23,7 +29,7 @@ public class RoomShape : MonoBehaviour
 
         BoxCollider boxCollider = (BoxCollider) GetComponent<BoxCollider>();
         Vector3 worldCenter = boxCollider.transform.TransformPoint(boxCollider.center);
-        Vector3 worldHalfExtents = boxCollider.transform.TransformVector(boxCollider.size * 0.5f) - new Vector3(1,1,1);
+        Vector3 worldHalfExtents = boxCollider.transform.TransformVector(boxCollider.size * 0.5f);
 
         Collider[] hitColliders = Physics.OverlapBox(worldCenter, worldHalfExtents, Quaternion.identity, LayerMask.GetMask("Environment"));
         foreach (Collider collider in hitColliders) {
@@ -40,7 +46,7 @@ public class RoomShape : MonoBehaviour
 
         BoxCollider boxCollider = (BoxCollider) GetComponent<BoxCollider>();
         Vector3 worldCenter = boxCollider.transform.TransformPoint(boxCollider.center);
-        Vector3 worldHalfExtents = boxCollider.transform.TransformVector(boxCollider.size * 0.5f) - new Vector3(1,1,1);
+        Vector3 worldHalfExtents = boxCollider.transform.TransformVector(boxCollider.size * 0.5f);
         Debug.DrawRay(worldCenter, worldHalfExtents.x * Vector3.right, Color.yellow);
         Debug.DrawRay(worldCenter, worldHalfExtents.x * -Vector3.right, Color.yellow);
         Debug.DrawRay(worldCenter, worldHalfExtents.y * Vector3.up, Color.yellow);
