@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 107468912}
   - component: {fileID: 107468913}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Camera Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 391960713}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Orientation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -309,7 +309,7 @@ GameObject:
   - component: {fileID: 487789697}
   - component: {fileID: 487789696}
   - component: {fileID: 487789695}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PlayerCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,8 +343,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d452275274eb1b2408581a478998d193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 500
-  sensY: 500
+  sensX: 800
+  sensY: 800
   orientation: {fileID: 391960713}
 --- !u!81 &487789696
 AudioListener:
@@ -696,7 +696,7 @@ GameObject:
   - component: {fileID: 755562301}
   m_Layer: 0
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -799,6 +799,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71b82331bb504a7b943ac475ff8d34e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Text: {fileID: 2103884506}
+  Player: {fileID: 391960712}
+  other_material: {fileID: 2100000, guid: a263a946aa5cc4ab8ace2604d04a96ea, type: 2}
+  Interactable_text: {fileID: 2103884506}
 --- !u!1 &965661496
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,7 +817,7 @@ GameObject:
   - component: {fileID: 965661497}
   - component: {fileID: 965661501}
   - component: {fileID: 965661502}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1070,7 +1074,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2103884507
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1110,7 +1114,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Interact [e]
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
