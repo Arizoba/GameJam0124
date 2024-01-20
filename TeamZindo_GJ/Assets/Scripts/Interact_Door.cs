@@ -5,7 +5,6 @@ using UnityEngine;
 public class Interact_Door : MonoBehaviour
 {
 
-    public GameObject Text;
     public GameObject Player;
 
 
