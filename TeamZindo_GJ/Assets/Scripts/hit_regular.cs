@@ -50,14 +50,14 @@ public class hit_regular : MonoBehaviour
         Ray ray = new Ray(Player.transform.position, direction.normalized);
         RaycastHit hit;
 
-        Debug.DrawRay(Player.transform.position, direction.normalized, Color.red);
+        //Debug.DrawRay(Player.transform.position, direction.normalized, Color.red);
 
 
         // Perform the raycast
         if (Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
             // Check if the hit object is the target
-            Debug.Log("Hit");
+            //Debug.Log("Hit");
 
 
             if (hit.transform.CompareTag("Enemy"))

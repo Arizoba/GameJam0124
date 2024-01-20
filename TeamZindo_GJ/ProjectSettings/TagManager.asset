@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Door
   - Enemy
+  - Tv
   layers:
   - Default
   - TransparentFX
