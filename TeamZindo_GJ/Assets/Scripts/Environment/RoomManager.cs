@@ -5,7 +5,7 @@ using UnityEngine;
 public class RoomManager : MonoBehaviour
 {
     [SerializeField]
-    private RoomShape initialRoomShape;
+    private RoomShape initialRoom;
 
     [SerializeField]
     private List<RoomShape> roomShapes;
@@ -15,12 +15,17 @@ public class RoomManager : MonoBehaviour
 
     void Start()
     {
-        RoomShape lastRoomShape = initialRoomShape;
+        RoomShape lastRoomShape = initialRoom;
         for (int i=0; i<generateCount; i++) {
-            RoomShape nextRoomShape = GameObject.Instantiate(roomShapes[Random.Range(0, roomShapes.Count)]);
-            nextRoomShape.AppendToRoom(lastRoomShape);
-            lastRoomShape = nextRoomShape;
+            lastRoomShape = Generate(lastRoomShape);
         }
+    }
+
+    public RoomShape Generate(RoomShape lastRoomShape) {
+        RoomShape nextRoomShape = GameObject.Instantiate(roomShapes[Random.Range(0, roomShapes.Count)]);
+        nextRoomShape.AppendToRoom(lastRoomShape);
+        lastRoomShape.Exit.SetActive(false);
+        return nextRoomShape;
     }
     
 }

@@ -112,8 +112,4 @@ public class PlayerMovement : MonoBehaviour
     {
         readyToJump = true;
     }
-
-    void OnCollisionEnter(Collision collision) {
-        Debug.Log(collision.gameObject);
-    }
 }

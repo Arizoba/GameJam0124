@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1821879147800695372}
   - component: {fileID: 3661188902793377940}
   - component: {fileID: 2010767917349279622}
+  - component: {fileID: 2032901147345001511}
   m_Layer: 11
   m_Name: Entrance
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2410860760737674168}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.526, y: -0.149, z: 0.17245792}
+  m_LocalPosition: {x: 0.521, y: -0.149, z: 0.17245792}
   m_LocalScale: {x: 0.033422742, y: 0.71304184, z: 0.28572017}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -94,7 +95,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -105,6 +106,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2032901147345001511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2410860760737674168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f32b913a7503c842b1467b90c0dd3b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RoomManager: {fileID: 0}
+  Room: {fileID: 5988291259686135566}
 --- !u!1 &2621250987837660322
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 2621250987837660322}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.537, y: -0.149, z: -0.307}
+  m_LocalPosition: {x: -0.556, y: -0.149, z: -0.307}
   m_LocalScale: {x: 0.033422742, y: 0.71304184, z: 0.28572017}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -259,9 +274,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633fbcbb8817ff342bc230be5536fb39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entrance: {fileID: 2410860760737674168}
+  entrance: {fileID: 2032901147345001511}
   exit: {fileID: 2621250987837660322}
-  room: {fileID: 9219234924690371897}
+  environment: {fileID: 9219234924690371897}
+  NextRoom: {fileID: 0}
 --- !u!65 &3257108895700377246
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -281,8 +297,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.000223, y: 0.36935222, z: 1.1442986}
-  m_Center: {x: -0.0041301553, y: -0.72667605, z: 0.01562031}
+  m_Size: {x: 1.000223, y: 0.39855993, z: 1.1442986}
+  m_Center: {x: -0.0041301553, y: -0.7120723, z: 0.01562031}
 --- !u!54 &6468694722481562070
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -339,7 +355,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.007, y: -0.502, z: 0.02}
-  m_LocalScale: {x: 1.0099542, y: 0.081988074, z: 1.154339}
+  m_LocalScale: {x: 1.188312, y: 0.081988074, z: 1.4433854}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1824483443268987104}
