@@ -43,7 +43,8 @@ public class hit_regular : MonoBehaviour
 
         if (health <= 0)
         {
-            transform.gameObject.SetActive(false);
+            transform.parent.gameObject.SetActive(false);
+            //transform.gameObject.SetActive(false);
         }
 
         Vector3 direction = Player.transform.forward;
@@ -60,7 +61,7 @@ public class hit_regular : MonoBehaviour
             //Debug.Log("Hit");
 
 
-            if (hit.transform.CompareTag("Enemy"))
+            if (hit.transform.CompareTag("Enemy") && hit.transform.gameObject == transform.gameObject)
             {
 
                 if (Input.GetKey("q"))
