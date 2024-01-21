@@ -5,7 +5,9 @@ using UnityEngine;
 public class EnterTheGoons : MonoBehaviour
 {
     public GameObject[] spawnlocations;
-    public GameObject[] candidates;  
+    public GameObject[] candidates;
+    public GameObject TVSpawnLocation;
+    public GameObject[] TVspawn;
 
 
     // Start is called before the first frame update
@@ -22,6 +24,16 @@ public class EnterTheGoons : MonoBehaviour
 
             CheckForAssigned(bruh);
 
+        }
+
+        if (TVSpawnLocation != null)
+        {
+            GameObject bruh = Instantiate(TVspawn[Random.Range(0, TVspawn.Length)], TVSpawnLocation.transform.position, Quaternion.identity, transform);
+
+            bruh.transform.rotation *= transform.parent.GetComponent<RoomShape>().Entrance.transform.rotation;
+            bruh.transform.Rotate(Vector3.up, 90);
+
+            CheckForAssigned(bruh);
         }
     }
 
