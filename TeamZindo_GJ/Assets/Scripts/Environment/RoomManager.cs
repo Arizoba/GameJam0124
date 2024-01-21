@@ -12,6 +12,7 @@ public class RoomManager : MonoBehaviour
 
     void Start()
     {
+        initialRoom.BlockOff();
         RoomShape lastRoomShape = initialRoom;
         lastRoomShape = Generate(lastRoomShape);
     }
@@ -29,6 +30,7 @@ public class RoomManager : MonoBehaviour
             Destroy(initialRoom.OverlapCollider.gameObject);
             Destroy(initialRoom.gameObject);
             initialRoom = tmpRoom;
+            initialRoom.BlockOff();
         }
     }
     

@@ -14,12 +14,23 @@ public class RoomShape : MonoBehaviour
     [SerializeField]
     private OverlapCollider overlapCollider;
 
+    [SerializeField]
+    private GameObject door;
+
     public Entrance Entrance => entrance;
     public GameObject Exit => exit;
 
     public RoomShape NextRoom = null;
 
     public OverlapCollider OverlapCollider => overlapCollider;
+
+    void Start() {
+        door.GetComponent<BoxCollider>().enabled = false;
+    }
+
+    public void BlockOff() {
+        door.GetComponent<BoxCollider>().enabled = true;
+    }
 
     public void AppendToRoom(RoomShape room) {
         entrance.RoomManager = room.Entrance.RoomManager;
