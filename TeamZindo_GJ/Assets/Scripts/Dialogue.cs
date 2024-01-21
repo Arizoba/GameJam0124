@@ -10,27 +10,58 @@ public class Dialogue : MonoBehaviour
     public float textSpeed;
 
     private int index;
+    public bool choices;
+    private bool chosen = false;
+
+    float keypresscd = 0.2f;
+    float lasskeypress;
 
     // Start is called before the first frame update
     void Start()
     {
         textComponent.text = string.Empty;
+        lasskeypress = Time.time;
         StartDialogue();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Time.time-lasskeypress > keypresscd)
         {
-            NextLine();
+            lasskeypress = Time.time;
+            if (Input.GetKey("e"))
+            {
+                //Debug.Log("pressed e");
+                NextLine();
+
+            }
+            else
+            {
+                StopAllCoroutines();
+                textComponent.text = lines[index];   
+                
+            }
+        }
+
+        if (choices)
+        {
+            if (Input.GetKey("1"))
+            {
+                Debug.Log("pressed 1");
+                chosen = true;
+
+            }
+            if (Input.GetKey("2"))
+            {
+                Debug.Log("pressed 2");
+                chosen = true;
+
+            }
 
         }
-        else
-        {
-            StopAllCoroutines();
-            textComponent.text = lines[index];
-        }
+
     }
 
     void StartDialogue()
@@ -41,12 +72,13 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator TypeLine()
     {
-
-        foreach (char c in lines[index].ToCharArray())
-        {
-            textComponent.text += c;
-            yield return new WaitForSeconds(textSpeed);
-        }
+        
+            foreach (char c in lines[index].ToCharArray())
+            {
+                textComponent.text += c;
+                yield return new WaitForSeconds(textSpeed);
+            }
+        
     }
 
     void NextLine()
@@ -59,7 +91,11 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            if (chosen)
+            {
+                gameObject.SetActive(false);
+
+            }
         }
     }
 }
