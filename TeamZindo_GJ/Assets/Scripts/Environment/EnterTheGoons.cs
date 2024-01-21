@@ -30,7 +30,7 @@ public class EnterTheGoons : MonoBehaviour
         {
             GameObject bruh = Instantiate(TVspawn[Random.Range(0, TVspawn.Length)], TVSpawnLocation.transform.position, Quaternion.identity, transform);
 
-            bruh.transform.rotation *= transform.parent.GetComponent<RoomShape>().Entrance.transform.rotation;
+            bruh.transform.rotation *= GetComponent<RoomShape>().Entrance.transform.rotation;
             bruh.transform.Rotate(Vector3.up, 90);
 
             CheckForAssigned(bruh);
