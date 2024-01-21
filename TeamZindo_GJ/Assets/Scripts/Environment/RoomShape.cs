@@ -30,7 +30,7 @@ public class RoomShape : MonoBehaviour
 
         transform.rotation = Quaternion.Inverse(entrance.transform.rotation) * room.Exit.transform.rotation;
 
-        transform.position = room.Exit.transform.position - entrance.transform.position;
+        transform.position = room.Exit.transform.position - entrance.transform.position - Vector3.up * 0.2f;
 
         BoxCollider boxCollider = (BoxCollider) (overlapCollider.GetComponent<BoxCollider>());
         Vector3 worldCenter = boxCollider.transform.TransformPoint(boxCollider.center);
