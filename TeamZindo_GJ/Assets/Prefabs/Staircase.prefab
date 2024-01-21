@@ -151,6 +151,8 @@ MonoBehaviour:
   exit: {fileID: 2061786254008419903}
   overlapCollider: {fileID: 8362451771364433501}
   door: {fileID: 4688454735142899287}
+  isFinal: 0
+  boss: {fileID: 0}
   NextRoom: {fileID: 0}
 --- !u!1 &8645423471107911891
 GameObject:
@@ -178,7 +180,7 @@ Transform:
   m_GameObject: {fileID: 8645423471107911891}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.082, y: 0.024, z: -2.148}
+  m_LocalPosition: {x: -1.082, y: -0.09, z: -2.24}
   m_LocalScale: {x: 0.20632595, y: 0.20632595, z: 0.20632595}
   m_ConstrainProportionsScale: 0
   m_Children: []
