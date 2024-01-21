@@ -197,6 +197,7 @@ MonoBehaviour:
   entrance: {fileID: 7384071135754397840}
   exit: {fileID: 5818418778798800925}
   overlapCollider: {fileID: 6554121857515294519}
+  door: {fileID: 9033184025498788680}
   NextRoom: {fileID: 0}
 --- !u!1001 &4628998431135920939
 PrefabInstance:
@@ -262,6 +263,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4423045620967985251, guid: aa46c22f64b544ddeba5320d1feb7476, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 238540383992858444}
     - targetCorrespondingSourceObject: {fileID: -8153468022190502949, guid: aa46c22f64b544ddeba5320d1feb7476, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1056834505592920647}
@@ -298,6 +302,32 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1568016432510859342, guid: aa46c22f64b544ddeba5320d1feb7476, type: 3}
+--- !u!1 &9033184025498788680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4423045620967985251, guid: aa46c22f64b544ddeba5320d1feb7476, type: 3}
+  m_PrefabInstance: {fileID: 4628998431135920939}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &238540383992858444
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9033184025498788680}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 0.29440638, y: 0.04622408, z: 0.030065993}
+  m_Center: {x: -0.1372032, y: 0, z: 0.0050329985}
 --- !u!1001 &7047642752400162383
 PrefabInstance:
   m_ObjectHideFlags: 0
