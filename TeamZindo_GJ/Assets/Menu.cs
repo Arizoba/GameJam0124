@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class Menu : MonoBehaviour
     void Update()
     {
         if(Input.anyKey){
-            Application.LoadLevel("Game");
+            SceneManager.LoadScene("Game");
         }
     }
 }

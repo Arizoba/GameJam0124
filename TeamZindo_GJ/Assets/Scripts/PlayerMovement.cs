@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
 
+    private bool inSpace = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -29,32 +31,25 @@ public class PlayerMovement : MonoBehaviour
 
     public void SetGravity(float gravity) {
         gravityValue = gravity;
-
-        controller.enabled = false;
-
-        Vector3 force = Vector3.Normalize(playerVelocity) * 0.01f;
-        GetComponent<Rigidbody>().AddForce(force);
+        inSpace = true;
     }
 
     void Update()
     {
-        if (controller.enabled) {
-            groundedPlayer = controller.isGrounded;
-            if (groundedPlayer && playerVelocity.y < 0)
-            {
-                playerVelocity.y = 0f;
-            }
-
-            Vector3 move = Input.GetAxis("Horizontal") * orientation.right + Input.GetAxis("Vertical") * orientation.forward;
-            controller.Move(move * Time.deltaTime * playerSpeed);
-
-            playerVelocity.y += gravityValue * Time.deltaTime;
-            controller.Move(playerVelocity * Time.deltaTime);
+        groundedPlayer = controller.isGrounded;
+        if (groundedPlayer && playerVelocity.y < 0)
+        {
+            playerVelocity.y = 0f;
         }
+        
+        Vector3 move = Input.GetAxis("Horizontal") * orientation.right + Input.GetAxis("Vertical") * orientation.forward;
 
-        else {
-            Vector3 move = Input.GetAxis("Horizontal") * orientation.right + Input.GetAxis("Vertical") * orientation.forward;
-            rb.AddForce(move * Time.deltaTime);
+        if (inSpace) {
+            move = transform.forward * 0.01f;
         }
+        controller.Move(move * Time.deltaTime * playerSpeed);
+
+        playerVelocity.y += gravityValue * Time.deltaTime;
+        controller.Move(playerVelocity * Time.deltaTime);
     }
 }
