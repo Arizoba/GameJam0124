@@ -24,12 +24,8 @@ public class RoomShape : MonoBehaviour
 
     public OverlapCollider OverlapCollider => overlapCollider;
 
-    void Start() {
-        door.GetComponent<BoxCollider>().enabled = false;
-    }
-
     public void BlockOff() {
-        door.GetComponent<BoxCollider>().enabled = true;
+        door.GetComponent<Animator>().SetBool("Blocked", true);
     }
 
     public void AppendToRoom(RoomShape room) {

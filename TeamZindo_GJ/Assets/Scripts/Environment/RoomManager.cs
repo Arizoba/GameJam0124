@@ -10,6 +10,11 @@ public class RoomManager : MonoBehaviour
     [SerializeField]
     private List<RoomShape> roomShapes;
 
+    [SerializeField]
+    private List<RoomShape> jointRoomShapes;
+
+    private bool jointFlag = true;
+
     void Start()
     {
         initialRoom.BlockOff();
@@ -18,7 +23,15 @@ public class RoomManager : MonoBehaviour
     }
 
     public RoomShape Generate(RoomShape lastRoomShape) {
-        RoomShape nextRoomShape = GameObject.Instantiate(roomShapes[Random.Range(0, roomShapes.Count)]);
+        RoomShape nextRoomShape;
+        if (jointFlag) {
+            nextRoomShape = GameObject.Instantiate(jointRoomShapes[Random.Range(0, jointRoomShapes.Count)]);
+            jointFlag = false;
+        }
+        else {
+            nextRoomShape = GameObject.Instantiate(roomShapes[Random.Range(0, roomShapes.Count)]);
+            jointFlag = !jointRoomShapes.Contains(nextRoomShape);
+        }
         nextRoomShape.AppendToRoom(lastRoomShape);
         return nextRoomShape;
     }
