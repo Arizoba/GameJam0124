@@ -10,9 +10,9 @@ public class Entrance : MonoBehaviour
     [SerializeField]
     private GameObject player = null;
 
-    private int generationCount = 5;
+    private int generationCount = 1;
 
-    private float detectionDistance = 30f;
+    private float detectionDistance = 10f;
     private bool inRange = false;
 
     public GameObject Player => player;
@@ -42,6 +42,7 @@ public class Entrance : MonoBehaviour
                 roomsToGenerate--;
             }
 
+            RoomManager.DeleteFirst();
         }
         else {
             inRange = false;

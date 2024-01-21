@@ -21,5 +21,15 @@ public class RoomManager : MonoBehaviour
         nextRoomShape.AppendToRoom(lastRoomShape);
         return nextRoomShape;
     }
+
+    public void DeleteFirst()
+    {
+        if (initialRoom.NextRoom != null && initialRoom.NextRoom.NextRoom != null && initialRoom.NextRoom.NextRoom.NextRoom != null) {
+            RoomShape tmpRoom = initialRoom.NextRoom;
+            initialRoom.OverlapCollider.gameObject.SetActive(false);
+            initialRoom.gameObject.SetActive(false);
+            initialRoom = tmpRoom;
+        }
+    }
     
 }

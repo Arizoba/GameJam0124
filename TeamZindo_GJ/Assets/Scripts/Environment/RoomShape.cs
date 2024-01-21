@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,12 +12,14 @@ public class RoomShape : MonoBehaviour
     private GameObject exit;
 
     [SerializeField]
-    private Collider overlapCollider;
+    private OverlapCollider overlapCollider;
 
     public Entrance Entrance => entrance;
     public GameObject Exit => exit;
 
     public RoomShape NextRoom = null;
+
+    public OverlapCollider OverlapCollider => overlapCollider;
 
     public void AppendToRoom(RoomShape room) {
         entrance.RoomManager = room.Entrance.RoomManager;
@@ -24,18 +27,24 @@ public class RoomShape : MonoBehaviour
         room.NextRoom = this;
 
         transform.localScale = room.transform.lossyScale;
-        transform.rotation = Quaternion.FromToRotation(entrance.transform.right, room.Exit.transform.right);
+
+        transform.rotation = Quaternion.Inverse(entrance.transform.rotation) * room.Exit.transform.rotation;
+
         transform.position = room.Exit.transform.position - entrance.transform.position;
 
         BoxCollider boxCollider = (BoxCollider) (overlapCollider.GetComponent<BoxCollider>());
         Vector3 worldCenter = boxCollider.transform.TransformPoint(boxCollider.center);
         Vector3 worldHalfExtents = boxCollider.transform.TransformVector(boxCollider.size * 0.5f);
 
-        Collider[] hitColliders = Physics.OverlapBox(worldCenter, worldHalfExtents, Quaternion.identity, LayerMask.GetMask("Environment"));
-        foreach (Collider collider in hitColliders) {
-            if (collider.gameObject != this && collider.gameObject != room) {
-                Debug.Log("Found " + collider.gameObject);
-                collider.gameObject.SetActive(false);
+        Collider[] otherColliders = Physics.OverlapBox(worldCenter, worldHalfExtents, Quaternion.identity, LayerMask.GetMask("Environment"));
+        foreach (Collider collider in otherColliders) {
+            OverlapCollider otherCollider = collider.gameObject.GetComponent<OverlapCollider>();
+            if (otherCollider == null) {
+                continue;
+            }
+            RoomShape collidedRoom = otherCollider.Room;
+            if (collidedRoom != this && collidedRoom != room) {
+                collidedRoom.gameObject.SetActive(false);
             }
         }
     }
@@ -45,7 +54,7 @@ public class RoomShape : MonoBehaviour
         Debug.DrawRay(exit.transform.position + Vector3.up, -exit.transform.forward * 5, Color.red);
         Debug.DrawRay(entrance.transform.position, entrance.transform.forward * 5, Color.green);
 
-        BoxCollider boxCollider = (BoxCollider) overlapCollider;
+        BoxCollider boxCollider = (BoxCollider) overlapCollider.GetComponent<BoxCollider>();
         Vector3 worldCenter = boxCollider.transform.TransformPoint(boxCollider.center);
         Vector3 worldHalfExtents = boxCollider.transform.TransformVector(boxCollider.size * 0.5f);
         Debug.DrawRay(worldCenter, worldHalfExtents.x * Vector3.right, Color.yellow);
