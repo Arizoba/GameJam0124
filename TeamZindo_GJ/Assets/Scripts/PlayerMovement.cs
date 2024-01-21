@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = Input.GetAxis("Horizontal") * orientation.right + Input.GetAxis("Vertical") * orientation.forward;
 
         if (inSpace) {
-            move = transform.forward * 0.01f;
+            move = Vector3.zero;
         }
         controller.Move(move * Time.deltaTime * playerSpeed);
 
