@@ -30,7 +30,7 @@ public class Interact_Tv : MonoBehaviour
         RaycastHit hit;
 
         // Perform the raycast
-        if (Physics.Raycast(ray, out hit, 5))
+        if (Physics.Raycast(ray, out hit, 10))
         {
             // Check if the hit object is the target
 

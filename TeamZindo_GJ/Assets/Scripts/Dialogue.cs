@@ -22,6 +22,10 @@ public class Dialogue : MonoBehaviour
         textComponent.text = string.Empty;
         lasskeypress = Time.time;
         StartDialogue();
+        if (choices == false)
+        {
+            chosen = true;
+        }
 
     }
 

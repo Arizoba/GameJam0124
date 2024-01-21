@@ -18,7 +18,7 @@ public class EnterTheGoons : MonoBehaviour
             // need to spawn random item at random platform
 
             // object, position, parent
-            GameObject bruh = Instantiate(candidates[Random.Range(0, candidates.Length)], spawnlocations[Random.Range(0, candidates.Length)].transform.position,Quaternion.identity, transform);
+            GameObject bruh = Instantiate(candidates[Random.Range(0, candidates.Length)], spawnlocations[Random.Range(0, spawnlocations.Length)].transform.position + new Vector3(0, 2, 0), Quaternion.identity, transform) ;
 
             CheckForAssigned(bruh);
 
@@ -49,6 +49,21 @@ public class EnterTheGoons : MonoBehaviour
             thing.GetComponent<hit_regular>().Player = GameObject.Find("PlayerCam");
 
         }
+
+        bruh = thing.GetComponent<Interact_Tv>();
+
+        if (bruh != null)
+        {
+            // mwans need to assign playerCam
+
+            thing.GetComponent<Interact_Tv>().Player = GameObject.Find("PlayerCam");
+
+        }
+
+
+
+
+
 
         //then do for each child
         foreach (Transform child in thing.transform)
