@@ -27,6 +27,13 @@ public class hit_regular : MonoBehaviour
         last_hit_time = Time.time;
         color_restore = Time.time;
         mycolor = GetComponent<MeshRenderer>().material;
+
+        // EXPERIMENTAL
+        if (Player == null)
+        {
+            Player = GameObject.Find("PlayerCam");
+
+        }
     }
 
     // Update is called once per frame
