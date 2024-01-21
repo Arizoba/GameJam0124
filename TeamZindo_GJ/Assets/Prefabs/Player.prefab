@@ -138,8 +138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d452275274eb1b2408581a478998d193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 800
-  sensY: 800
+  sensX: 400
+  sensY: 400
   orientation: {fileID: 1760292077237643782}
 --- !u!45 &3538283096575562727
 Skybox:
@@ -454,3 +454,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 035fad153557844809dfd2c8d39dcc63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 0}

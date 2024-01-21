@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class Memories : MonoBehaviour
 {
     [SerializeField]
-    private List<Image> memory1;
+    private List<RectTransform> memory1;
     [SerializeField]
-    private List<Image> memory2;
+    private List<RectTransform> memory2;
     [SerializeField]
-    private List<Image> memory3;
+    private List<RectTransform> memory3;
 
     [SerializeField]
     private AudioSource memoryMusic;
@@ -20,19 +20,19 @@ public class Memories : MonoBehaviour
 
     private Canvas canvas;
 
-    private List<Image> memory = null;
+    private List<RectTransform> memory = null;
     private int index = 0;
 
     void Start() {
         canvas = GetComponent<Canvas>();
-        foreach (Image memory in memory1) {
-            memory.enabled = false;
+        foreach (RectTransform memory in memory1) {
+            memory.gameObject.SetActive(false);
         }
-        foreach (Image memory in memory2) {
-            memory.enabled = false;
+        foreach (RectTransform memory in memory2) {
+            memory.gameObject.SetActive(false);
         }
-        foreach (Image memory in memory3) {
-            memory.enabled = false;
+        foreach (RectTransform memory in memory3) {
+            memory.gameObject.SetActive(false);
         }
         canvas.enabled = false;
     }
@@ -40,7 +40,7 @@ public class Memories : MonoBehaviour
     void PlayMemory() {
         if (memory != null && index < memory.Count) {
             if (Input.anyKeyDown){
-                memory[index].enabled = false;
+                memory[index].gameObject.SetActive(false);
                 index++;
                 if (index == memory.Count) {
                     memory = null;
@@ -49,7 +49,7 @@ public class Memories : MonoBehaviour
                     mainMusic.Play();
                 }
                 else {
-                    memory[index].enabled = true;
+                    memory[index].gameObject.SetActive(true);
                 }
             }
         }
@@ -67,8 +67,8 @@ public class Memories : MonoBehaviour
         }
         canvas.enabled = true;
         index = 0;
-        memory[index].enabled = true;
-        mainMusic.Stop();
+        memory[index].gameObject.SetActive(true);
+        mainMusic.Pause();
         memoryMusic.Play();
     }
 

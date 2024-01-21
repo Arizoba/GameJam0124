@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class hit_regular : MonoBehaviour
 {
-    int health = 1;
+    [SerializeField]
+    private int health = 1;
+
+    [SerializeField]
+    private bool isBoss = false;
+
     float hit_delay = 0.5f;
     float last_hit_time;
     float color_restore;
@@ -52,6 +58,10 @@ public class hit_regular : MonoBehaviour
         {
             transform.parent.gameObject.SetActive(false);
             //transform.gameObject.SetActive(false);
+
+            if (isBoss) {
+                SceneManager.LoadScene("End");
+            }
         }
 
         Vector3 direction = Player.transform.forward;
