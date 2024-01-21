@@ -26,8 +26,8 @@ public class RoomManager : MonoBehaviour
     {
         if (initialRoom.NextRoom != null && initialRoom.NextRoom.NextRoom != null && initialRoom.NextRoom.NextRoom.NextRoom != null) {
             RoomShape tmpRoom = initialRoom.NextRoom;
-            initialRoom.OverlapCollider.gameObject.SetActive(false);
-            initialRoom.gameObject.SetActive(false);
+            Destroy(initialRoom.OverlapCollider.gameObject);
+            Destroy(initialRoom.gameObject);
             initialRoom = tmpRoom;
         }
     }
