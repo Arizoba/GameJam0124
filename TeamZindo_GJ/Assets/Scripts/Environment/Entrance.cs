@@ -39,8 +39,6 @@ public class Entrance : MonoBehaviour
                 roomsToGenerate--;
             }
 
-            // gameObject.SetActive(false);
-
         }
         else {
             inRange = false;

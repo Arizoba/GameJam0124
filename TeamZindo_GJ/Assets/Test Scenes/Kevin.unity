@@ -313,6 +313,10 @@ PrefabInstance:
       propertyPath: RoomManager
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5682422270209932532, guid: 7324a05c25249e6449e7550047d6f827, type: 3}
+      propertyPath: detectionDistance
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 6243774619156056554, guid: 7324a05c25249e6449e7550047d6f827, type: 3}
       propertyPath: m_Name
       value: Corridor
@@ -500,7 +504,6 @@ MonoBehaviour:
   roomShapes:
   - {fileID: 7600967138758074162, guid: 7324a05c25249e6449e7550047d6f827, type: 3}
   - {fileID: 7600967138758074162, guid: a982d1caadab96a44b203d732ca9acab, type: 3}
-  - {fileID: 7600967138758074162, guid: 29bb6657b3e4c7542b40a8355955ac3f, type: 3}
   generateCount: 3
 --- !u!4 &1812358692
 Transform:

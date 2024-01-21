@@ -184,7 +184,7 @@ MonoBehaviour:
   RoomManager: {fileID: 0}
   Room: {fileID: 7600967138758074162}
   Player: {fileID: 0}
-  detectionDistance: 30
+  detectionDistance: 300
   generationCount: 3
 --- !u!1001 &1083336630081916502
 PrefabInstance:
