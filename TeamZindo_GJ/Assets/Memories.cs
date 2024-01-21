@@ -12,6 +12,12 @@ public class Memories : MonoBehaviour
     [SerializeField]
     private List<Image> memory3;
 
+    [SerializeField]
+    private AudioSource memoryMusic;
+
+    [SerializeField]
+    private AudioSource mainMusic;
+
     private Canvas canvas;
 
     private List<Image> memory = null;
@@ -39,6 +45,8 @@ public class Memories : MonoBehaviour
                 if (index == memory.Count) {
                     memory = null;
                     canvas.enabled = false;
+                    memoryMusic.Stop();
+                    mainMusic.Play();
                 }
                 else {
                     memory[index].enabled = true;
@@ -60,6 +68,8 @@ public class Memories : MonoBehaviour
         canvas.enabled = true;
         index = 0;
         memory[index].enabled = true;
+        mainMusic.Stop();
+        memoryMusic.Play();
     }
 
     void Update() {
