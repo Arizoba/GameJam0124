@@ -19,8 +19,11 @@ public class PlayerMovement : MonoBehaviour
 
     public Transform Anchor;
 
+    private Rigidbody rb;
+
     private void Start()
     {
+        rb = GetComponent<Rigidbody>();
         controller = GetComponent<CharacterController>();
     }
 
@@ -29,8 +32,8 @@ public class PlayerMovement : MonoBehaviour
 
         controller.enabled = false;
 
-        GetComponent<Rigidbody>().velocity = Vector3.Normalize(playerVelocity) * 0.01f;
-        GetComponent<Rigidbody>().AddForce(Vector3.Normalize(playerVelocity) * 0.01f);
+        Vector3 force = Vector3.Normalize(playerVelocity * 0.001f);
+        GetComponent<Rigidbody>().AddForce(force);
     }
 
     void Update()
@@ -47,6 +50,11 @@ public class PlayerMovement : MonoBehaviour
 
             playerVelocity.y += gravityValue * Time.deltaTime;
             controller.Move(playerVelocity * Time.deltaTime);
+        }
+
+        else {
+            Vector3 move = Input.GetAxis("Horizontal") * orientation.right + Input.GetAxis("Vertical") * orientation.forward;
+            rb.AddForce(move * Time.deltaTime);
         }
     }
 }

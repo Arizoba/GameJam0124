@@ -40,6 +40,7 @@ public class Entrance : MonoBehaviour
             if (Room.IsFinal) {
                 player.GetComponent<Rigidbody>().useGravity = false;
                 player.GetComponent<PlayerMovement>().SetGravity(0);
+                Room.Boss.transform.SetParent(player.transform);
             }
         }
 
