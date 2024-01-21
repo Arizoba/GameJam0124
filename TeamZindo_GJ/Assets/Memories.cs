@@ -33,7 +33,7 @@ public class Memories : MonoBehaviour
 
     void PlayMemory() {
         if (memory != null && index < memory.Count) {
-            if (Input.GetKeyDown("e")){
+            if (Input.anyKeyDown){
                 memory[index].enabled = false;
                 index++;
                 if (index == memory.Count) {

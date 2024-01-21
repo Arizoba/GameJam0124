@@ -30,7 +30,7 @@ public class RoomManager : MonoBehaviour
     private int memoriesLeft = 3;
     private int memoryIndex = 1;
 
-    private int roomsLeft;
+    public int roomsLeft;
 
     void Start()
     {
@@ -44,13 +44,15 @@ public class RoomManager : MonoBehaviour
         RoomShape nextRoomShape;
 
         if (roomsLeft == 0) {
-            if (memoriesLeft == 0) {
+            if (memoriesLeft <= 0) {
                 roomShapes.Insert(0, bossRoom);
             }
-            memories.StartMemory(memoryIndex);
-            memoriesLeft--;
-            memoryIndex++;
-            roomsLeft = roomBeforeCheck;
+            else {
+                memories.StartMemory(memoryIndex);
+                memoriesLeft--;
+                memoryIndex++;
+                roomsLeft = roomBeforeCheck;
+            }
         }
 
         if (hardRoomLimit == 0) {
