@@ -591,12 +591,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1395492862}
   lines:
-  - Crazy?
-  - I was cracy once
-  - They locked me in a room
-  - A rubber room
-  - A rubber room with rats
-  - And the rats made me crazy
+  - "Contraption: You\u2019re finally awake, darling.  "
+  - 'I have to get out of here. '
   textSpeed: 0.3
 --- !u!1 &1163630187
 GameObject:
