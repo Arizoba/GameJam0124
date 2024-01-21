@@ -23,7 +23,7 @@ public class bob : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("q") && Time.time-lastkeypress>keypresscd)
+        if (Input.GetKeyDown("q") || Input.GetMouseButtonDown(0) && Time.time-lastkeypress>keypresscd)
         {
             lastkeypress = Time.time;
             transform.position += new Vector3(0, 2, 0);
