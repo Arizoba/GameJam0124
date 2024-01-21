@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
 
         controller.enabled = false;
 
-        Vector3 force = Vector3.Normalize(playerVelocity * 0.001f);
+        Vector3 force = Vector3.Normalize(playerVelocity) * 0.01f;
         GetComponent<Rigidbody>().AddForce(force);
     }
 
