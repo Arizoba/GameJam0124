@@ -525,6 +525,7 @@ MonoBehaviour:
   - {fileID: 7600967138758074162, guid: ffe4aeb2e301f73429d9115bb6f3b12c, type: 3}
   bossRoom: {fileID: 7600967138758074162, guid: 4dccb02129ecd0740ae2e823fb363667, type: 3}
   roomsBeforeBoss: 20
+  hardRoomLimit: 3
 --- !u!4 &1812358692
 Transform:
   m_ObjectHideFlags: 0

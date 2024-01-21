@@ -20,6 +20,9 @@ public class RoomShape : MonoBehaviour
     [SerializeField]
     private bool isFinal;
 
+    [SerializeField]
+    private GameObject boss;
+
     public Entrance Entrance => entrance;
     public GameObject Exit => exit;
 
@@ -28,6 +31,8 @@ public class RoomShape : MonoBehaviour
     public OverlapCollider OverlapCollider => overlapCollider;
 
     public bool IsFinal => isFinal;
+
+    public GameObject Boss => boss;
 
     public void BlockOff() {
         door.GetComponent<Animator>().SetBool("Blocked", true);

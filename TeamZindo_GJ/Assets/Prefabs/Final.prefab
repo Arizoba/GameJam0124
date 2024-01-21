@@ -122,6 +122,7 @@ MonoBehaviour:
   overlapCollider: {fileID: 8362451771364433501}
   door: {fileID: 2926482082013580374}
   isFinal: 1
+  boss: {fileID: 1198076515863672194}
   NextRoom: {fileID: 0}
 --- !u!95 &3236210327097300721
 Animator:
@@ -386,6 +387,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbde3759b0e55904481446ce52cea982, type: 3}
+--- !u!1 &1198076515863672194 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8692076549991104063, guid: dbde3759b0e55904481446ce52cea982, type: 3}
+  m_PrefabInstance: {fileID: 7494018021626891197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2011908997283245880 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8352951616508830853, guid: dbde3759b0e55904481446ce52cea982, type: 3}
