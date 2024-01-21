@@ -20,12 +20,12 @@ public class RoomShape : MonoBehaviour
 
     public void AppendToRoom(RoomShape room) {
         entrance.RoomManager = room.Entrance.RoomManager;
-        entrance.Player = room.Entrance.Player;
+        entrance.SetPlayer(room.Entrance.Player);
         room.NextRoom = this;
 
         transform.localScale = room.transform.lossyScale;
         transform.rotation = Quaternion.FromToRotation(entrance.transform.right, room.Exit.transform.right);
-        transform.position += room.Exit.transform.position - entrance.transform.position;
+        transform.position = room.Exit.transform.position - entrance.transform.position;
 
         BoxCollider boxCollider = (BoxCollider) (overlapCollider.GetComponent<BoxCollider>());
         Vector3 worldCenter = boxCollider.transform.TransformPoint(boxCollider.center);
@@ -34,6 +34,7 @@ public class RoomShape : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapBox(worldCenter, worldHalfExtents, Quaternion.identity, LayerMask.GetMask("Environment"));
         foreach (Collider collider in hitColliders) {
             if (collider.gameObject != this && collider.gameObject != room) {
+                Debug.Log("Found " + collider.gameObject);
                 collider.gameObject.SetActive(false);
             }
         }
@@ -41,18 +42,18 @@ public class RoomShape : MonoBehaviour
 
     void Update()
     {
-        // Debug.DrawRay(exit.transform.position + Vector3.up * 1, -exit.transform.right * 5, Color.red);
-        // Debug.DrawRay(entrance.transform.position, entrance.transform.right * 5, Color.green);
+        Debug.DrawRay(exit.transform.position + Vector3.up, -exit.transform.forward * 5, Color.red);
+        Debug.DrawRay(entrance.transform.position, entrance.transform.forward * 5, Color.green);
 
-        // BoxCollider boxCollider = (BoxCollider) GetComponent<BoxCollider>();
-        // Vector3 worldCenter = boxCollider.transform.TransformPoint(boxCollider.center);
-        // Vector3 worldHalfExtents = boxCollider.transform.TransformVector(boxCollider.size * 0.5f);
-        // Debug.DrawRay(worldCenter, worldHalfExtents.x * Vector3.right, Color.yellow);
-        // Debug.DrawRay(worldCenter, worldHalfExtents.x * -Vector3.right, Color.yellow);
-        // Debug.DrawRay(worldCenter, worldHalfExtents.y * Vector3.up, Color.yellow);
-        // Debug.DrawRay(worldCenter, worldHalfExtents.y * -Vector3.up, Color.yellow);
-        // Debug.DrawRay(worldCenter, worldHalfExtents.z * Vector3.forward, Color.yellow);
-        // Debug.DrawRay(worldCenter, worldHalfExtents.z * -Vector3.forward, Color.yellow);
+        BoxCollider boxCollider = (BoxCollider) overlapCollider;
+        Vector3 worldCenter = boxCollider.transform.TransformPoint(boxCollider.center);
+        Vector3 worldHalfExtents = boxCollider.transform.TransformVector(boxCollider.size * 0.5f);
+        Debug.DrawRay(worldCenter, worldHalfExtents.x * Vector3.right, Color.yellow);
+        Debug.DrawRay(worldCenter, worldHalfExtents.x * -Vector3.right, Color.yellow);
+        Debug.DrawRay(worldCenter, worldHalfExtents.y * Vector3.up, Color.yellow);
+        Debug.DrawRay(worldCenter, worldHalfExtents.y * -Vector3.up, Color.yellow);
+        Debug.DrawRay(worldCenter, worldHalfExtents.z * Vector3.forward, Color.yellow);
+        Debug.DrawRay(worldCenter, worldHalfExtents.z * -Vector3.forward, Color.yellow);
     }
 
 }
