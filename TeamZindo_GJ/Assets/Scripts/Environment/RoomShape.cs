@@ -44,7 +44,8 @@ public class RoomShape : MonoBehaviour
             }
             RoomShape collidedRoom = otherCollider.Room;
             if (collidedRoom != this && collidedRoom != room) {
-                collidedRoom.gameObject.SetActive(false);
+                Destroy(collidedRoom.gameObject);
+                Destroy(otherCollider.gameObject);
             }
         }
     }

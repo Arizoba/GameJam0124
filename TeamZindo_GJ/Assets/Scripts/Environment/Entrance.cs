@@ -12,7 +12,7 @@ public class Entrance : MonoBehaviour
 
     private int generationCount = 1;
 
-    private float detectionDistance = 10f;
+    private float detectionDistance = 50f;
     private bool inRange = false;
 
     public GameObject Player => player;
