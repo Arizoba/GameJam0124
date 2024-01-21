@@ -34,7 +34,7 @@ public class Interact_Tv : MonoBehaviour
         {
             // Check if the hit object is the target
 
-            if (hit.transform.CompareTag("Tv"))
+            if (hit.transform.CompareTag("Tv") && hit.transform.gameObject == transform.gameObject)
             {
                 Interactable_text.SetActive(true);
 

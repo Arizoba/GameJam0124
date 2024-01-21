@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class hit_regular : MonoBehaviour
 {
-    public int health = 10;
-     float hit_delay = 0.5f;
+    int health = 6;
+    float hit_delay = 0.5f;
     float last_hit_time;
     float color_restore;
 
@@ -32,7 +32,7 @@ public class hit_regular : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time - color_restore > 0.5)
+        if (Time.time - color_restore > 0.1)
         {
             GetComponent<MeshRenderer>().material = mycolor;
 
