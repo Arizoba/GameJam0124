@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PTSD : MonoBehaviour
 {
+
+    public Sprite[] images;
+    public float imageinterval = 10;
+
     // Start is called before the first frame update
     void Start()
     {
