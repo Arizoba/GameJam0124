@@ -27,6 +27,13 @@ public class hit_regular : MonoBehaviour
         last_hit_time = Time.time;
         color_restore = Time.time;
         mycolor = GetComponent<MeshRenderer>().material;
+
+        // EXPERIMENTAL
+        if (Player == null)
+        {
+            Player = GameObject.Find("PlayerCam");
+
+        }
     }
 
     // Update is called once per frame
@@ -64,7 +71,7 @@ public class hit_regular : MonoBehaviour
             if (hit.transform.CompareTag("Enemy") && hit.transform.gameObject == transform.gameObject)
             {
 
-                if (Input.GetKey("q"))
+                if (Input.GetKeyDown("q") || Input.GetMouseButtonDown(0))
                 {
                     // tik damage, need to have delay like half second?
 

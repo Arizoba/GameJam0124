@@ -17,9 +17,21 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Transform orientation;
 
+    public Transform Anchor;
+
+    private Rigidbody rb;
+
+    private bool inSpace = false;
+
     private void Start()
     {
+        rb = GetComponent<Rigidbody>();
         controller = GetComponent<CharacterController>();
+    }
+
+    public void SetGravity(float gravity) {
+        gravityValue = gravity;
+        inSpace = true;
     }
 
     void Update()
@@ -29,8 +41,12 @@ public class PlayerMovement : MonoBehaviour
         {
             playerVelocity.y = 0f;
         }
-
+        
         Vector3 move = Input.GetAxis("Horizontal") * orientation.right + Input.GetAxis("Vertical") * orientation.forward;
+
+        if (inSpace) {
+            move = Vector3.zero;
+        }
         controller.Move(move * Time.deltaTime * playerSpeed);
 
         playerVelocity.y += gravityValue * Time.deltaTime;

@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 2061786254008419903}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.01, y: 0.1, z: -11.954}
+  m_LocalPosition: {x: -6.01, y: 0, z: -11.954}
   m_LocalScale: {x: 0.20632595, y: 0.20632595, z: 0.20632595}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -216,6 +216,8 @@ MonoBehaviour:
   exit: {fileID: 2061786254008419903}
   overlapCollider: {fileID: 3556654509141546695}
   door: {fileID: 5329469520531889640}
+  isFinal: 0
+  boss: {fileID: 0}
   NextRoom: {fileID: 0}
 --- !u!114 &2486925468106396002
 MonoBehaviour:
@@ -237,6 +239,8 @@ MonoBehaviour:
   - {fileID: 1193038412344196245, guid: 6fda789db0a0749c88c0ffbeaad5af84, type: 3}
   - {fileID: 7101492831470020999, guid: 10d33b7004fb8471389ecf2a54195e6a, type: 3}
   - {fileID: 3815470506676104007, guid: 90faf32525a8a46edac6c4d0332bb7f7, type: 3}
+  TVSpawnLocation: {fileID: 0}
+  TVspawn: []
 --- !u!1 &8285256823911390610
 GameObject:
   m_ObjectHideFlags: 0

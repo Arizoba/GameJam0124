@@ -17,12 +17,22 @@ public class RoomShape : MonoBehaviour
     [SerializeField]
     private GameObject door;
 
+    [SerializeField]
+    private bool isFinal;
+
+    [SerializeField]
+    private GameObject boss;
+
     public Entrance Entrance => entrance;
     public GameObject Exit => exit;
 
     public RoomShape NextRoom = null;
 
     public OverlapCollider OverlapCollider => overlapCollider;
+
+    public bool IsFinal => isFinal;
+
+    public GameObject Boss => boss;
 
     public void BlockOff() {
         door.GetComponent<Animator>().SetBool("Blocked", true);
@@ -59,7 +69,9 @@ public class RoomShape : MonoBehaviour
 
     void Update()
     {
-        Debug.DrawRay(exit.transform.position + Vector3.up, -exit.transform.forward * 5, Color.red);
+        if (!isFinal) {
+            Debug.DrawRay(exit.transform.position + Vector3.up, -exit.transform.forward * 5, Color.red);
+        }
         Debug.DrawRay(entrance.transform.position, entrance.transform.forward * 5, Color.green);
 
         BoxCollider boxCollider = (BoxCollider) overlapCollider.GetComponent<BoxCollider>();

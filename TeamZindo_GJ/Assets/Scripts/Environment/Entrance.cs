@@ -8,7 +8,7 @@ public class Entrance : MonoBehaviour
     public RoomShape Room;
 
     [SerializeField]
-    private GameObject player = null;
+    private PlayerMovement player = null;
 
     [SerializeField]
     private GameObject door = null;
@@ -19,15 +19,14 @@ public class Entrance : MonoBehaviour
     private float openDistance = 70f;
     private bool inRange = false;
 
-    public GameObject Player => player;
+    public PlayerMovement Player => player;
 
-    public void SetPlayer(GameObject thePlayer) {
+    public void SetPlayer(PlayerMovement thePlayer) {
         player = thePlayer;
     }
 
     void Update() {
-
-        float distance = Vector3.Distance(player.transform.position, transform.position);
+        float distance = Vector3.Distance(player.Anchor.transform.position, transform.position);
 
         if (distance <= openDistance) {
             door.GetComponent<Animator>().SetBool("DoorOpen", true);
@@ -35,6 +34,13 @@ public class Entrance : MonoBehaviour
 
         else {
             door.GetComponent<Animator>().SetBool("DoorOpen", false);
+        }
+
+        if (distance <= 5f) {
+            if (Room.IsFinal) {
+                player.GetComponent<Rigidbody>().useGravity = false;
+                player.GetComponent<PlayerMovement>().SetGravity(0);
+            }
         }
 
         if (distance <= detectionDistance) {
@@ -52,7 +58,7 @@ public class Entrance : MonoBehaviour
                 roomsToGenerate--;
             }
 
-            while (lastRoom != null && roomsToGenerate > 0) {
+            while (lastRoom != null && !lastRoom.IsFinal && roomsToGenerate > 0) {
                 lastRoom = RoomManager.Generate(lastRoom);
                 roomsToGenerate--;
             }
