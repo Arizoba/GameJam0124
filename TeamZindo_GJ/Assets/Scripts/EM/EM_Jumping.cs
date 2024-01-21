@@ -19,7 +19,7 @@ public class EM_Jumping : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y <= 0) // ground or below
+        if (transform.position.y <= 2.5) // ground or below
         {
             // need to jump
             force_y = 0;
