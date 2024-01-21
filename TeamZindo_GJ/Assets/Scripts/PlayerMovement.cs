@@ -17,23 +17,36 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Transform orientation;
 
+    public Transform Anchor;
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
     }
 
+    public void SetGravity(float gravity) {
+        gravityValue = gravity;
+
+        controller.enabled = false;
+
+        GetComponent<Rigidbody>().velocity = Vector3.Normalize(playerVelocity) * 0.01f;
+        GetComponent<Rigidbody>().AddForce(Vector3.Normalize(playerVelocity) * 0.01f);
+    }
+
     void Update()
     {
-        groundedPlayer = controller.isGrounded;
-        if (groundedPlayer && playerVelocity.y < 0)
-        {
-            playerVelocity.y = 0f;
+        if (controller.enabled) {
+            groundedPlayer = controller.isGrounded;
+            if (groundedPlayer && playerVelocity.y < 0)
+            {
+                playerVelocity.y = 0f;
+            }
+
+            Vector3 move = Input.GetAxis("Horizontal") * orientation.right + Input.GetAxis("Vertical") * orientation.forward;
+            controller.Move(move * Time.deltaTime * playerSpeed);
+
+            playerVelocity.y += gravityValue * Time.deltaTime;
+            controller.Move(playerVelocity * Time.deltaTime);
         }
-
-        Vector3 move = Input.GetAxis("Horizontal") * orientation.right + Input.GetAxis("Vertical") * orientation.forward;
-        controller.Move(move * Time.deltaTime * playerSpeed);
-
-        playerVelocity.y += gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
     }
 }

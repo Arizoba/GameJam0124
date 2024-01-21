@@ -13,17 +13,35 @@ public class RoomManager : MonoBehaviour
     [SerializeField]
     private List<RoomShape> jointRoomShapes;
 
+    [SerializeField]
+    private RoomShape bossRoom;
+
+    [SerializeField]
+    private int roomsBeforeBoss = 20;
+
+    [SerializeField]
+    private int hardRoomLimit = 20;
+
     private bool jointFlag = true;
 
     void Start()
     {
         initialRoom.BlockOff();
         RoomShape lastRoomShape = initialRoom;
+        Debug.Log(initialRoom.Entrance.Player);
         lastRoomShape = Generate(lastRoomShape);
     }
 
     public RoomShape Generate(RoomShape lastRoomShape) {
         RoomShape nextRoomShape;
+
+        if (hardRoomLimit == 0) {
+            nextRoomShape = GameObject.Instantiate(bossRoom);
+        }
+
+        if (roomsBeforeBoss == 0) {
+            roomShapes.Insert(0, bossRoom);
+        }
         if (jointFlag) {
             nextRoomShape = GameObject.Instantiate(jointRoomShapes[Random.Range(0, jointRoomShapes.Count)]);
             jointFlag = false;
@@ -33,6 +51,7 @@ public class RoomManager : MonoBehaviour
             jointFlag = !jointRoomShapes.Contains(nextRoomShape);
         }
         nextRoomShape.AppendToRoom(lastRoomShape);
+        roomsBeforeBoss--;
         return nextRoomShape;
     }
 
