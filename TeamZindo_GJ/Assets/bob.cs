@@ -11,6 +11,9 @@ public class bob : MonoBehaviour
     float returntotime = 0.2f;
     bool hasbob = false;
 
+    [SerializeField]
+    private AudioSource sfx;
+
     float lastbob;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,7 @@ public class bob : MonoBehaviour
     {
         if (Input.GetKeyDown("q") || Input.GetMouseButtonDown(0) && Time.time-lastkeypress>keypresscd)
         {
+            sfx.Play();
             lastkeypress = Time.time;
             transform.position += new Vector3(0, 2, 0);
             lastbob = Time.time;

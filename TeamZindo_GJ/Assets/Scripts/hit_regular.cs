@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class hit_regular : MonoBehaviour
 {
-    int health = 6;
+    int health = 1;
     float hit_delay = 0.5f;
     float last_hit_time;
     float color_restore;
