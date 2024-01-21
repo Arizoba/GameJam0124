@@ -46,8 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RoomManager: {fileID: 0}
   Room: {fileID: 7600967138758074162}
-  Player: {fileID: 0}
-  detectionDistance: 300
+  player: {fileID: 0}
   generationCount: 3
 --- !u!1 &5738385108733935038
 GameObject:
@@ -100,8 +99,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 60.23092, y: 3.0699081, z: 60.171143}
-  m_Center: {x: -19.708332, y: 8.456062, z: -36.856888}
+  m_Size: {x: 60.230923, y: 24.491756, z: 60.17114}
+  m_Center: {x: -19.708334, y: 19.16699, z: -36.856888}
 --- !u!1 &5818418778798800925
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +110,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 803714002845139866}
-  - component: {fileID: 3596408803226349512}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
@@ -134,23 +132,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1824483443268987104}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &3596408803226349512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5818418778798800925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f32b913a7503c842b1467b90c0dd3b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RoomManager: {fileID: 0}
-  Room: {fileID: 7600967138758074162}
-  Player: {fileID: 0}
-  detectionDistance: 300
-  generationCount: 3
 --- !u!1 &6243774619156056554
 GameObject:
   m_ObjectHideFlags: 0

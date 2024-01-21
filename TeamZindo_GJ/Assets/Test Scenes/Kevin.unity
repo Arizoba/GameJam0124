@@ -310,8 +310,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 768414726}
     - target: {fileID: 5682422270209932532, guid: 7324a05c25249e6449e7550047d6f827, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 768414726}
+    - target: {fileID: 5682422270209932532, guid: 7324a05c25249e6449e7550047d6f827, type: 3}
       propertyPath: RoomManager
       value: 
+      objectReference: {fileID: 1812358691}
+    - target: {fileID: 5682422270209932532, guid: 7324a05c25249e6449e7550047d6f827, type: 3}
+      propertyPath: generationCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5682422270209932532, guid: 7324a05c25249e6449e7550047d6f827, type: 3}
       propertyPath: detectionDistance
@@ -411,6 +419,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1466731911911786421, guid: 90c8a554bf3c54c608c9256bb00498ee, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 1466731911911786421, guid: 90c8a554bf3c54c608c9256bb00498ee, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
       value: 64
       objectReference: {fileID: 0}
@@ -440,7 +452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4523518922739300691, guid: 90c8a554bf3c54c608c9256bb00498ee, type: 3}
       propertyPath: playerSpeed
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4523518922739300691, guid: 90c8a554bf3c54c608c9256bb00498ee, type: 3}
       propertyPath: gravityValue
@@ -465,6 +477,10 @@ PrefabInstance:
     - target: {fileID: 7350025511329579761, guid: 90c8a554bf3c54c608c9256bb00498ee, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9160913215157613577, guid: 90c8a554bf3c54c608c9256bb00498ee, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -504,7 +520,7 @@ MonoBehaviour:
   roomShapes:
   - {fileID: 7600967138758074162, guid: 7324a05c25249e6449e7550047d6f827, type: 3}
   - {fileID: 7600967138758074162, guid: a982d1caadab96a44b203d732ca9acab, type: 3}
-  generateCount: 3
+  - {fileID: 7600967138758074162, guid: 29bb6657b3e4c7542b40a8355955ac3f, type: 3}
 --- !u!4 &1812358692
 Transform:
   m_ObjectHideFlags: 0

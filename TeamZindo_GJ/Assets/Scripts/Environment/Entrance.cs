@@ -8,18 +8,21 @@ public class Entrance : MonoBehaviour
     public RoomShape Room;
 
     [SerializeField]
-    public GameObject Player = null;
+    private GameObject player = null;
 
-    [SerializeField]
-    private float detectionDistance = 3.0f;
+    private int generationCount = 5;
 
-    [SerializeField]
-    private int generationCount = 3;
-
+    private float detectionDistance = 30f;
     private bool inRange = false;
 
+    public GameObject Player => player;
+
+    public void SetPlayer(GameObject thePlayer) {
+        player = thePlayer;
+    }
+
     void Update() {
-        if (Vector3.Distance(Player.transform.position, transform.position) <= detectionDistance) {
+        if (Vector3.Distance(player.transform.position, transform.position) <= detectionDistance) {
             if (inRange) {
                 return;
             }
@@ -34,7 +37,7 @@ public class Entrance : MonoBehaviour
                 roomsToGenerate--;
             }
 
-            while (roomsToGenerate > 0) {
+            while (lastRoom != null && roomsToGenerate > 0) {
                 lastRoom = RoomManager.Generate(lastRoom);
                 roomsToGenerate--;
             }
